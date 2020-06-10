@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1, maximum=1,minimum=1, user-scalable=no"
+    />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+    <title>test</title>
+    <script>
+      window.SITE_CONFIG = {}
+      window.SITE_CONFIG['apiURL'] = 'http://operate.uecchina.com.cn' // api请求地址
+      window.SITE_CONFIG['appid'] = 'wx58290f2de66bf94e'
+      window.SITE_CONFIG['shareURL'] = 'http://yiqikang.uecchina.com.cn/'
+      window.SITE_CONFIG['shareImg'] =
+        'http://operate.uecchina.com.cn/assets/images/20200117165439.png'
+      window.SITE_CONFIG['chseck'] = ''
+      window.SITE_CONFIG['storeState'] = {} // vuex本地储存初始化状态（用于不刷新页面的情况下，也能重置初始化项目中所有状态）
+    </script>
+    <!-- 开发环境 -->
+    <% if (process.env.NODE_ENV === 'dev') { %>
+    <script>
+      window.SITE_CONFIG['apiURL'] = 'http://pplmapi.jeemoo.com/'
+      window.SITE_CONFIG['appid'] = 'wxc7677ab6421314f0'
+      window.SITE_CONFIG['shareURL'] = 'http://uc.5iportal.com/'
+      window.SITE_CONFIG['shareImg'] =
+        'http://operate.uecchina.com.cn/assets/images/20200117165439.png'
+    </script>
+    <% } %>
+    <!-- 本地环境 -->
+    <% if (process.env.NODE_ENV === 'test') { %>
+    <script>
+      window.SITE_CONFIG['apiURL'] = 'http://pplmapi.jeemoo.com/'
+      window.SITE_CONFIG['appid'] = 'wxc7677ab6421314f0'
+      window.SITE_CONFIG['shareURL'] = 'http://uc.5iportal.com/'
+      window.SITE_CONFIG['shareImg'] =
+        'http://operate.uecchina.com.cn/assets/images/20200117165439.png'
+    </script>
+    <% } %>
+    <!-- 生产环境 -->
+    <% if (process.env.NODE_ENV === 'prod') { %>
+    <script>
+      window.SITE_CONFIG['apiURL'] = 'http://operate.uecchina.com.cn'
+      window.SITE_CONFIG['appid'] = 'wx58290f2de66bf94e'
+      window.SITE_CONFIG['shareURL'] = 'http://yiqikang.uecchina.com.cn/'
+      window.SITE_CONFIG['shareImg'] =
+        'http://operate.uecchina.com.cn/assets/images/20200117165439.png'
+    </script>
+    <% } %>
+  </head>
+  <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
